@@ -1,0 +1,15 @@
+# Grafana provisioning-as-code: points Grafana at the dashboard JSON file
+# checked into infra/grafana/dashboards/. Used if you provision this stack
+# via Grafana's file-based provisioning instead of (or alongside)
+# infra/grafana/provision.py's API/MCP-driven provisioning.
+apiVersion: 1
+
+providers:
+  - name: continuity-room
+    orgId: 1
+    folder: "Continuity Room"
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    options:
+      path: /etc/grafana/provisioning/dashboards/continuity_room

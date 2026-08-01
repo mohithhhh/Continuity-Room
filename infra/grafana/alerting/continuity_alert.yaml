@@ -1,0 +1,71 @@
+# Grafana provisioning-as-code: alert rule + contact point + notification
+# policy for severity >= high continuity flags. This is the file-based
+# provisioning form; infra/grafana/provision.py applies the equivalent
+# programmatically via the Grafana HTTP API and the Grafana MCP server for
+# stacks (like most Grafana Cloud instances) where you provision live
+# rather than by mounting files into the Grafana container.
+apiVersion: 1
+
+groups:
+  - orgId: 1
+    name: continuity-room
+    folder: Continuity Room
+    interval: 1m
+    rules:
+      - uid: continuity-high-severity
+        title: "Continuity Room: high severity flag detected"
+        condition: C
+        data:
+          - refId: A
+            relativeTimeRange:
+              from: 300
+              to: 0
+            datasourceUid: continuity-room-clickhouse
+            model:
+              rawSql: >-
+                SELECT count() AS new_high_severity_flags
+                FROM continuity_room.continuity_flags
+                WHERE severity IN ('high', 'critical')
+                  AND created_at > now() - INTERVAL 5 MINUTE
+              format: table
+              refId: A
+          - refId: C
+            datasourceUid: "__expr__"
+            model:
+              type: threshold
+              expression: A
+              conditions:
+                - evaluator:
+                    type: gt
+                    params: [0]
+              refId: C
+        noDataState: NoData
+        execErrState: Error
+        for: 0s
+        labels:
+          severity: high
+        annotations:
+          summary: >-
+            A new continuity_flags row with severity high or critical was
+            inserted in the last 5 minutes.
+
+contactPoints:
+  - orgId: 1
+    name: continuity-room-alerts
+    receivers:
+      # Webhook is the default here (simplest to demo end-to-end without an
+      # SMTP relay). Swap type: webhook -> type: email and settings.url ->
+      # settings.addresses: $ALERT_EMAIL_ADDRESS to use email instead.
+      - uid: continuity-room-webhook
+        type: webhook
+        settings:
+          url: $ALERT_WEBHOOK_URL
+
+policies:
+  - orgId: 1
+    receiver: continuity-room-alerts
+    group_by: ["grafana_folder", "alertname"]
+    routes:
+      - receiver: continuity-room-alerts
+        matchers:
+          - severity =~ "high|critical"

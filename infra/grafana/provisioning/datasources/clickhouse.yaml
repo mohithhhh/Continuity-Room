@@ -1,0 +1,23 @@
+# Grafana provisioning-as-code: ClickHouse datasource.
+# Drop this file (with real values substituted, or via the $VAR expansion
+# Grafana supports in provisioning files) into Grafana's
+# provisioning/datasources directory, or apply it with
+# `infra/grafana/provision.py` via the Grafana HTTP API / MCP server.
+apiVersion: 1
+
+datasources:
+  - name: Continuity Room ClickHouse
+    uid: continuity-room-clickhouse
+    type: grafana-clickhouse-datasource
+    access: proxy
+    isDefault: false
+    jsonData:
+      host: $CLICKHOUSE_HOST
+      port: $CLICKHOUSE_PORT
+      protocol: https
+      secure: true
+      username: $CLICKHOUSE_USER
+      defaultDatabase: continuity_room
+    secureJsonData:
+      password: $CLICKHOUSE_PASSWORD
+    editable: false

@@ -1,0 +1,19 @@
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.8
+    container_name: continuity-room-clickhouse
+    ports:
+      - "8123:8123" # HTTP interface (used by clickhouse-connect + mcp-clickhouse)
+      - "9000:9000" # native TCP interface
+    environment:
+      CLICKHOUSE_DB: default
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+    volumes:
+      - clickhouse-data:/var/lib/clickhouse
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+
+volumes:
+  clickhouse-data:
