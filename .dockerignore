@@ -1,0 +1,12 @@
+**/__pycache__
+**/*.pyc
+backend/.venv
+backend/db/__pycache__
+node_modules
+frontend/dist
+frontend/.vite
+.git
+.env
+*.md
+!README.md
+infra/docker/clickhouse-data

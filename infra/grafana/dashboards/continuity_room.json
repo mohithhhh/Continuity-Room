@@ -1,0 +1,105 @@
+{
+  "title": "Continuity Room",
+  "uid": "continuity-room",
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "time": { "from": "now-7d", "to": "now" },
+  "tags": ["continuity-room", "agentic-cinema"],
+  "templating": {
+    "list": [
+      {
+        "name": "script_id",
+        "type": "query",
+        "datasource": { "type": "grafana-clickhouse-datasource", "uid": "${DS_CLICKHOUSE}" },
+        "query": "SELECT DISTINCT script_id FROM continuity_room.story_events ORDER BY script_id",
+        "refresh": 2,
+        "includeAll": true,
+        "multi": true
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Open continuity flags by severity",
+      "type": "barchart",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "datasource": { "type": "grafana-clickhouse-datasource", "uid": "${DS_CLICKHOUSE}" },
+      "targets": [
+        {
+          "refId": "A",
+          "rawSql": "SELECT severity, count() AS open_flags FROM continuity_room.continuity_flags WHERE status = 'open' AND script_id IN (${script_id:sqlstring}) GROUP BY severity ORDER BY multiIf(severity = 'critical', 4, severity = 'high', 3, severity = 'medium', 2, 1) DESC",
+          "format": "table"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "orange", "value": 1 },
+              { "color": "red", "value": 5 }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Continuity flags timeline by episode",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "datasource": { "type": "grafana-clickhouse-datasource", "uid": "${DS_CLICKHOUSE}" },
+      "targets": [
+        {
+          "refId": "A",
+          "rawSql": "SELECT toDateTime(f.created_at) AS time, f.severity AS metric, count() AS flags FROM continuity_room.continuity_flags AS f WHERE f.script_id IN (${script_id:sqlstring}) GROUP BY time, metric ORDER BY time",
+          "format": "time_series"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Flag details (drill-down)",
+      "type": "table",
+      "gridPos": { "h": 10, "w": 24, "x": 0, "y": 8 },
+      "datasource": { "type": "grafana-clickhouse-datasource", "uid": "${DS_CLICKHOUSE}" },
+      "targets": [
+        {
+          "refId": "A",
+          "rawSql": "SELECT flag_id, script_id, flag_type, severity, status, explanation, episode_a, scene_a, character_a, episode_b, scene_b, character_b, created_at FROM continuity_room.vw_writers_room WHERE script_id IN (${script_id:sqlstring}) ORDER BY created_at DESC",
+          "format": "table"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": [
+          {
+            "matcher": { "id": "byName", "options": "severity" },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": { "type": "color-background" }
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  { "type": "value", "options": { "critical": { "color": "dark-red" } } },
+                  { "type": "value", "options": { "high": { "color": "orange" } } },
+                  { "type": "value", "options": { "medium": { "color": "yellow" } } },
+                  { "type": "value", "options": { "low": { "color": "light-blue" } } }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
