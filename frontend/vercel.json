@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://continuity-room-352886202889.us-central1.run.app/api/:path*"
+    }
+  ]
+}
