@@ -1,0 +1,359 @@
+{
+  "communities": {
+    "0": [
+      "backend_app_agents_director",
+      "backend_app_agents_director_py_continuityreport",
+      "backend_app_agents_director_rationale_1",
+      "backend_app_agents_director_run_director",
+      "backend_app_agents_orchestrator",
+      "backend_app_agents_orchestrator_rationale_1",
+      "backend_app_agents_producer",
+      "backend_app_agents_producer_rationale_1",
+      "backend_app_agents_producer_rationale_104",
+      "backend_app_agents_producer_rationale_53",
+      "backend_app_agents_producer_run_technical_producer",
+      "backend_app_agents_producer_write_events",
+      "backend_app_agents_runtime",
+      "backend_app_agents_runtime_rationale_16",
+      "backend_app_agents_runtime_run_agent_once",
+      "backend_app_schemas",
+      "backend_app_schemas_continuityflagdraft",
+      "backend_app_schemas_continuityreport",
+      "backend_app_schemas_extractionresult",
+      "backend_app_schemas_py_basemodel",
+      "backend_app_schemas_rationale_11",
+      "backend_app_schemas_rationale_24",
+      "backend_app_schemas_rationale_30",
+      "backend_app_schemas_rationale_41",
+      "backend_app_schemas_storyevent",
+      "baseagent"
+    ],
+    "1": [
+      "backend_app_agents_studio_head",
+      "backend_app_agents_studio_head_get_role_scoped_view",
+      "backend_app_agents_studio_head_persist_flags",
+      "backend_app_agents_studio_head_persist_report",
+      "backend_app_agents_studio_head_py_continuityreport",
+      "backend_app_agents_studio_head_py_viewerrole",
+      "backend_app_agents_studio_head_rationale_1",
+      "backend_app_agents_studio_head_rationale_130",
+      "backend_app_agents_studio_head_rationale_142",
+      "backend_app_agents_studio_head_rationale_87",
+      "backend_app_agents_studio_head_record_audit_log",
+      "backend_app_agents_studio_head_run_studio_head",
+      "backend_app_clickhouse_client",
+      "backend_app_clickhouse_client_get_client",
+      "backend_app_clickhouse_client_py_client",
+      "backend_app_clickhouse_client_rationale_8",
+      "backend_app_config",
+      "backend_app_config_settings",
+      "basesettings"
+    ],
+    "2": [
+      "backend_scripts_provision_grafana",
+      "backend_scripts_provision_grafana_call_mcp_tool",
+      "backend_scripts_provision_grafana_clickhouse_datasource_payload",
+      "backend_scripts_provision_grafana_ensure_clickhouse_datasource",
+      "backend_scripts_provision_grafana_ensure_contact_point",
+      "backend_scripts_provision_grafana_ensure_folder",
+      "backend_scripts_provision_grafana_ensure_notification_policy",
+      "backend_scripts_provision_grafana_find_existing_rule_uid",
+      "backend_scripts_provision_grafana_get_org_id",
+      "backend_scripts_provision_grafana_grafana_client",
+      "backend_scripts_provision_grafana_main",
+      "backend_scripts_provision_grafana_provision_alert_rule",
+      "backend_scripts_provision_grafana_provision_dashboard",
+      "backend_scripts_provision_grafana_py_client",
+      "backend_scripts_provision_grafana_rationale_1",
+      "backend_scripts_provision_grafana_rationale_111",
+      "backend_scripts_provision_grafana_rationale_141",
+      "backend_scripts_provision_grafana_rationale_74",
+      "backend_scripts_provision_grafana_require_grafana_config"
+    ],
+    "3": [
+      "frontend_tsconfig",
+      "frontend_tsconfig_compileroptions",
+      "frontend_tsconfig_compileroptions_isolatedmodules",
+      "frontend_tsconfig_compileroptions_jsx",
+      "frontend_tsconfig_compileroptions_lib",
+      "frontend_tsconfig_compileroptions_module",
+      "frontend_tsconfig_compileroptions_moduleresolution",
+      "frontend_tsconfig_compileroptions_noemit",
+      "frontend_tsconfig_compileroptions_resolvejsonmodule",
+      "frontend_tsconfig_compileroptions_skiplibcheck",
+      "frontend_tsconfig_compileroptions_strict",
+      "frontend_tsconfig_compileroptions_target",
+      "frontend_tsconfig_compileroptions_usedefineforclassfields",
+      "frontend_tsconfig_include",
+      "ref_dom",
+      "ref_dom_iterable",
+      "ref_es2022",
+      "ref_src"
+    ],
+    "4": [
+      "backend_app_agents_orchestrator_pipelineresult",
+      "backend_app_agents_orchestrator_pipelinestageresult",
+      "backend_app_agents_orchestrator_py_basemodel",
+      "backend_app_agents_orchestrator_rationale_39",
+      "backend_app_agents_orchestrator_run_pipeline",
+      "backend_app_api_main",
+      "backend_app_api_main_get_config",
+      "backend_app_api_main_get_flags",
+      "backend_app_api_main_health",
+      "backend_app_api_main_py_basemodel",
+      "backend_app_api_main_py_viewerrole",
+      "backend_app_api_main_rationale_35",
+      "backend_app_api_main_run_pipeline_endpoint",
+      "backend_app_api_main_runpipelinerequest",
+      "get",
+      "pipelineresult",
+      "post"
+    ],
+    "5": [
+      "frontend_package",
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_dom",
+      "frontend_package_name",
+      "frontend_package_private",
+      "frontend_package_scripts",
+      "frontend_package_scripts_build",
+      "frontend_package_scripts_dev",
+      "frontend_package_scripts_preview",
+      "frontend_package_type",
+      "frontend_package_version",
+      "react",
+      "react_dom"
+    ],
+    "6": [
+      "frontend_src_api",
+      "frontend_src_api_continuityflagdraft",
+      "frontend_src_api_continuityreport",
+      "frontend_src_api_flagtype",
+      "frontend_src_api_getconfig",
+      "frontend_src_api_pipelineresult",
+      "frontend_src_api_pipelinestageresult",
+      "frontend_src_api_runpipeline",
+      "frontend_src_api_severity",
+      "frontend_src_app",
+      "frontend_src_app_app",
+      "frontend_src_app_stages",
+      "frontend_src_main"
+    ],
+    "7": [
+      "frontend_package_devdependencies",
+      "frontend_package_devdependencies_types_react",
+      "frontend_package_devdependencies_types_react_dom",
+      "frontend_package_devdependencies_typescript",
+      "frontend_package_devdependencies_vite",
+      "frontend_package_devdependencies_vitejs_plugin_react",
+      "types_react",
+      "types_react_dom",
+      "typescript",
+      "vite",
+      "vitejs_plugin_react"
+    ],
+    "8": [
+      "backend_db_init_db",
+      "backend_db_init_db_main",
+      "backend_db_init_db_rationale_1",
+      "backend_db_init_db_statements"
+    ],
+    "9": [
+      "infra_cloudrun_deploy",
+      "infra_cloudrun_deploy_create_or_update_secret",
+      "infra_cloudrun_deploy_sh__entry"
+    ],
+    "10": [
+      "frontend_vercel",
+      "frontend_vercel_rewrites"
+    ],
+    "11": [
+      "backend_app_agents_init"
+    ],
+    "12": [
+      "backend_app_api_init"
+    ],
+    "13": [
+      "backend_app_clickhouse_init"
+    ],
+    "14": [
+      "backend_app_init"
+    ],
+    "15": [
+      "backend_scripts_init"
+    ],
+    "16": [
+      "frontend_src_vite_env_d"
+    ],
+    "17": [
+      "frontend_vite_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.13538461538461538,
+    "1": 0.15789473684210525,
+    "2": 0.21637426900584794,
+    "3": 0.1111111111111111,
+    "4": 0.16911764705882354,
+    "5": 0.14285714285714285,
+    "6": 0.21794871794871795,
+    "7": 0.18181818181818182,
+    "8": 0.6666666666666666,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0
+  },
+  "gods": [
+    {
+      "id": "frontend_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 12
+    },
+    {
+      "id": "backend_scripts_provision_grafana_main",
+      "label": "main()",
+      "degree": 10
+    },
+    {
+      "id": "backend_app_agents_orchestrator_run_pipeline",
+      "label": "run_pipeline()",
+      "degree": 9
+    },
+    {
+      "id": "backend_app_agents_runtime_run_agent_once",
+      "label": "run_agent_once()",
+      "degree": 9
+    },
+    {
+      "id": "backend_app_clickhouse_client_get_client",
+      "label": "get_client()",
+      "degree": 9
+    },
+    {
+      "id": "backend_app_schemas_continuityreport",
+      "label": "ContinuityReport",
+      "degree": 8
+    },
+    {
+      "id": "backend_app_agents_producer_run_technical_producer",
+      "label": "run_technical_producer()",
+      "degree": 7
+    },
+    {
+      "id": "backend_app_agents_studio_head_get_role_scoped_view",
+      "label": "get_role_scoped_view()",
+      "degree": 7
+    },
+    {
+      "id": "backend_app_agents_orchestrator_pipelineresult",
+      "label": "PipelineResult",
+      "degree": 6
+    },
+    {
+      "id": "backend_app_agents_studio_head_run_studio_head",
+      "label": "run_studio_head()",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "PipelineStageResult",
+      "target": "ContinuityReport",
+      "source_files": [
+        "backend/app/agents/orchestrator.py",
+        "backend/app/schemas.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "PipelineResult",
+      "target": "ContinuityReport",
+      "source_files": [
+        "backend/app/agents/orchestrator.py",
+        "backend/app/schemas.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "run_pipeline()",
+      "target": "run_director()",
+      "source_files": [
+        "backend/app/agents/orchestrator.py",
+        "backend/app/agents/director.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "RunPipelineRequest",
+      "target": "PipelineResult",
+      "source_files": [
+        "backend/app/api/main.py",
+        "backend/app/agents/orchestrator.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source"
+    },
+    {
+      "source": "run_pipeline()",
+      "target": "run_technical_producer()",
+      "source_files": [
+        "backend/app/agents/orchestrator.py",
+        "backend/app/agents/producer.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `get_client()` connect `Governance and Access Control` to `Agent Pipeline Logic`?",
+      "why": "High betweenness centrality (0.020) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `get_role_scoped_view()` connect `Governance and Access Control` to `Pipeline Execution API`?",
+      "why": "High betweenness centrality (0.019) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `run_agent_once()` connect `Agent Pipeline Logic` to `Governance and Access Control`?",
+      "why": "High betweenness centrality (0.019) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `name`, `private`, `version` to the rest of the system?",
+      "why": "35 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Agent Pipeline Logic` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.13538461538461538 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `TypeScript Configuration` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Project Dependencies` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
